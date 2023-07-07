@@ -13,8 +13,8 @@ Vamos criar um bot que para curtir o primeiro post da página que o usuário def
 9.  Clicar em 'not now' para não manter conectado.
 10.  Acessar a página que o usuário informou.
 11.  Abrir o primeiro post.
-12.  SE O POST NÃO TIVER SIDO CURTIDO:
+SE O POST NÃO TIVER SIDO CURTIDO:
      13. Curtir o post
      14. Solicitar um comentário ao usuário
-	    15. Digitar o comentário.
+     15. Digitar o comentário.
      16. Repetir o processo após 24 horas.
