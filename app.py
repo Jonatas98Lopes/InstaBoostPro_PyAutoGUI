@@ -7,7 +7,7 @@ nome_pagina = pyautogui.prompt(text='Qual o nome da página?', title='Nome de us
 
 email = pyautogui.prompt(text='Qual o email que você usa no Instagram?', title='Endereço de email no Instagram')
 
-senha = pyautogui.password(text='Qual a sua senha?', title='Senha de usuário no Instagram', mask='*')
+senha = pyautogui.password(text='Qual a sua senha?', title='Senha de usuário no Instagram', mask='*') 
 
 while True:
 	
@@ -15,7 +15,9 @@ while True:
 	pausar()
 	
 	barra_email = pyautogui.locateCenterOnScreen('./images/BarraEmail.png')
+
 	barra_senha = pyautogui.locateCenterOnScreen('./images/BarraSenha.png')
+	
 	botao_entrar = pyautogui.locateCenterOnScreen('./images/BotaoEntrar.png')
 
 	pyautogui.click(x=barra_email[0], y=barra_email[1], duration=1.5)
@@ -35,12 +37,19 @@ while True:
 		botao_not_now = pyautogui.locateCenterOnScreen('./images/NotNow.png')
 		pyautogui.click(x=botao_not_now[0], y=botao_not_now[1], duration=1.5)
 		pausar()
-	except: pass
+	except: 
+		pausar()
 	finally:
 		webbrowser.open(f'https://www.instagram.com/{nome_pagina}')
 		pausar()
+		
+		pyautogui.click(x=1197,y=286, duration=1.5)
+		pausar()
+
+		pyautogui.scroll(-500)
+		pausar()
   
-		pyautogui.click(x=773, y=662, duration=1.5)
+		pyautogui.click(x=801, y=292, duration=1.5)
 		pausar()
 
 		try:
@@ -52,12 +61,17 @@ while True:
 		else:
 			comentario = pyautogui.prompt(text='Insira um comentário no seu post:', title='Comentário no Post')
 
-			pyautogui.click(x=932, y=579, duration=1.5)
+
+		
+			barra_comentario = pyautogui.locateCenterOnScreen('./images/Comentario.png')
 			pausar()
-			pyautogui.click(x=955, y=663, duration=1.5)
+			pyautogui.click(x=barra_comentario[0], y=barra_comentario[1], duration=1.5)
+			pausar()
+			pyautogui.press("space")
+			pausar()
 			digitar_caracteres_especiais(comentario)
 			pausar()
 			pyautogui.press("enter")
-		finally:
 			pyautogui.alert(text='Pronto! A última publicação foi curtida e comentada. O programa será pausado por pelo menos 24 horas.', title='Informação', button='Ok')
+		finally:
 			parar_temporariamente()
