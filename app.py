@@ -11,6 +11,7 @@ senha = pyautogui.password(text='Qual a sua senha?', title='Senha de usuário no
 
 while True:
 	
+	# O site Será aberto na janela do seu navegadorpadrão.
 	webbrowser.open('https://www.instagram.com/')
 	pausar()
 	
@@ -43,12 +44,15 @@ while True:
 		webbrowser.open(f'https://www.instagram.com/{nome_pagina}')
 		pausar()
 		
+		# Depende do tamanho da sua tela.
 		pyautogui.click(x=1197,y=286, duration=1.5)
 		pausar()
 
-		pyautogui.scroll(-500)
+		# Depende do tamanho da sua tela.
+		pyautogui.scroll(-470)
 		pausar()
   
+		# Depende do tamanho da sua tela.
 		pyautogui.click(x=801, y=292, duration=1.5)
 		pausar()
 
