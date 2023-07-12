@@ -27,7 +27,8 @@ SE O POST NÃO TIVER SIDO CURTIDO:
      
      16. Informar ao usuário que o programa ficará pausado por 24 horas.
      
-     17. Repetir o processo após 24 horas.
+     17. Deslogar da Conta.
+     18. Repetir o processo após 24 horas.
 
 CASO O POST JÁ ESTEJA CURTIDO:
      
@@ -35,7 +36,9 @@ CASO O POST JÁ ESTEJA CURTIDO:
      
      14. Informar ao usuário que o programa ficará pausado por 24 horas.
      
-     15. Repetir o processo após 24 horas.
+     15. Deslogar da Conta.
+     
+     16. Repetir o processo após 24 horas.
 
 ***
 
@@ -98,7 +101,7 @@ Pronto! Você está apto para rodar o projeto.
 
 ### Possíveis problemas:
 
-Primeiramente, entenda que a biblioteca **PyAutoGUI** foi criada para automatizações que dependem do tamanho da sua tela. Em outras palavras, se você utilizar uma tela de tamanho diferente do computador em que a aplicação foi testada, é muito provável que a aplicação quebre. No meu caso, eu dividi a tela no meio, com o editor de texto à esquerda e o navegador, à direita, então, tente fazer o mesmo no seu computador.
+Primeiramente, entenda que a biblioteca **PyAutoGUI** foi criada para automatizações que dependem do tamanho da sua tela. Em outras palavras, se você utilizar uma tela de tamanho diferente do computador em que a aplicação foi testada, é muito provável que a aplicação quebre. No meu caso, eu dividi a tela no meio, com o editor de texto à esquerda e o navegador, à direita, então, você deve fazer o mesmo no seu computador para que a automação funcione.
 
 
 Caso você tenha este tipo de problema, olhe código do fonte do programa - **app.py**. Os comandos que dependem do tamanho da sua tela recebem um comentário na sua linha de cima escrito: 
