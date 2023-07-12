@@ -8,8 +8,12 @@ Vamos criar um bot que para curtir o primeiro post da página que o usuário def
 1.  Solicitar uma página ao usuário.
 2. Solicitar nome de usuário.
 3.  Solicitar senha.
-4.  Abrir o navegador
-5.  Navegar até o site https://www.instagram.com
+4. Solicitar um comentário padrão ao usuário.
+5.  Abrir o navegador
+6.  Navegar até o site https://www.instagram.com
+
+PROCESSO SE REPETE A CADA 24 HORAS.
+
 6.  Digitar o nome de usuário.
 7.  Digitar a senha.
 8.  Apertar no botão de logar.
@@ -21,14 +25,12 @@ SE O POST NÃO TIVER SIDO CURTIDO:
  
      13. Curtir o post
      
-     14. Solicitar um comentário ao usuário
          
      15. Digitar o comentário.
      
      16. Informar ao usuário que o programa ficará pausado por 24 horas.
      
      17. Deslogar da Conta.
-     18. Repetir o processo após 24 horas.
 
 CASO O POST JÁ ESTEJA CURTIDO:
      

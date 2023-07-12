@@ -1,40 +1,53 @@
-import pyautogui, pyperclip, webbrowser
+import pyautogui, webbrowser
 from funcoes import *
 
 
-
 nome_pagina = pyautogui.prompt(text='Qual o nome da página?', title='Nome de usuário da página')
+
+if nome_pagina.find('@') != -1:
+    nome_pagina = nome_pagina[1:]
+    print(nome_pagina)
 
 email = pyautogui.prompt(text='Qual o email que você usa no Instagram?', title='Endereço de email no Instagram')
 
 senha = pyautogui.password(text='Qual a sua senha?', title='Senha de usuário no Instagram', mask='*') 
 
-while True:
+comentario = pyautogui.prompt(text='Insira um comentário padrão adicionar à cada nova postagem publicada', title='Comentário no Post')
+
+# O site Será aberto na janela do seu navegadorpadrão.
+webbrowser.open('https://www.instagram.com/')
+pausar()
+
+while True:    
     
-    # O site Será aberto na janela do seu navegadorpadrão.
-    webbrowser.open('https://www.instagram.com/')
-    pausar()
-    
+    # Depende do tamanho da sua tela.
     barra_email = pyautogui.locateCenterOnScreen('./images/BarraEmail.png')
 
+    # Depende do tamanho da sua tela.
     barra_senha = pyautogui.locateCenterOnScreen('./images/BarraSenha.png')
     
+    # Depende do tamanho da sua tela.
     botao_entrar = pyautogui.locateCenterOnScreen('./images/BotaoEntrar.png')
 
+    
+    # Depende do tamanho da sua tela.
     pyautogui.click(x=barra_email[0], y=barra_email[1], duration=1.5)
     pausar()
     digitar_caracteres_especiais(email)
     pausar() 
    
+    # Depende do tamanho da sua tela.
     pyautogui.click(x=barra_senha[0], y=barra_senha[1], duration=1.5)
     pausar()
     digitar_caracteres_especiais(senha)
     pausar()
  
+    # Depende do tamanho da sua tela.
     pyautogui.click(x=botao_entrar[0], y=botao_entrar[1], duration=1.5)
     pausar()
 
     try:
+        # Depende do tamanho da sua tela.
         botao_not_now = pyautogui.locateCenterOnScreen('./images/NotNow.png')
         pyautogui.click(x=botao_not_now[0], y=botao_not_now[1], duration=1.5)
         pausar()
@@ -58,16 +71,18 @@ while True:
 
         curtido = True
         try:
+            # Depende do tamanho da sua tela.
             botao_curtir = pyautogui.locateCenterOnScreen('./images/Coracao.png')
             pyautogui.click(x=botao_curtir[0], y=botao_curtir[1], duration=1.5)
             pausar()
         except: pass 
         else:
             curtido = False
-            comentario = pyautogui.prompt(text='Insira um comentário no seu post:', title='Comentário no Post')
             
+            # Depende do tamanho da sua tela.
             barra_comentario = pyautogui.locateCenterOnScreen('./images/Comentario.png')
             pausar()
+            # Depende do tamanho da sua tela.
             pyautogui.click(x=barra_comentario[0], y=barra_comentario[1], duration=1.5)
             pausar()
             pyautogui.press("space")
@@ -76,9 +91,11 @@ while True:
             pausar()
             pyautogui.press("enter")
         finally:
+            # Depende do tamanho da sua tela.
             pyautogui.doubleClick(x=1268,y=687, duration=1.5, interval=1)
             pausar()
 
+            # Depende do tamanho da sua tela.
             pyautogui.click(x=909,y=184, duration=1.5)
             pausar()
 
@@ -89,7 +106,9 @@ while True:
             pyautogui.press("enter")
         
             if curtido:
-                pyautogui.alert(text='Última publicação já  estava curtida. O programa será pausado por pelo menos 24 horas.', title='Informação', button='Ok')
+                mensagem = 'Última publicação já  estava curtida. O programa será pausado por pelo menos 24 horas.'
             else:
-                pyautogui.alert(text='Pronto! A última publicação foi curtida e comentada. O programa será pausado por pelo menos 24 horas.', title='Informação', button='Ok')
+                mensagem = 'Pronto! A última publicação foi curtida e comentada. O programa será pausado por pelo menos 24 horas.'
+
+            informar_fim_do_programa(mensagem)
             parar_temporariamente()
